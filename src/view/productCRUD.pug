@@ -1,0 +1,45 @@
+extend layout.pug 
+block body 
+    style 
+        include ../public/style3.css
+    h1 PRODUCT
+    a.btn.btn-primary(href="/product/create") Creat New
+    table.table.table-bordered
+        thead
+            tr
+                th(scope='col') Stt
+                th(scope='col') Tên sản phẩm
+                th(scope='col') Giá
+                th(scope='col') Tình trạng
+                th(scope='col') Thao tác
+        tbody
+            each laptop, index in laptops
+                tr
+                    td= index + 1 
+                    td.info
+                        - var imgs = laptop.imageurl;       //"\"" + laptop[6] + "\""
+                            div.lato
+                                img(src=imgs)
+                                div
+                                    div= laptop.title
+                                    p= laptop.summary
+                    td.price=laptop.price
+                    td.status
+                        div Còn hàng
+                        div.state= "(" + laptop.number + ")"
+                    td 
+                        - var param = "update?id=" + laptop._id;
+                        a.btn.btn-danger.edit(href=param) Edit
+                        a.btn.btn-light.details Details
+                        - var paramDele = "delete?id=" + laptop._id;
+                        a.btn.btn-primary.delete(href=paramDele) Delete
+    nav(aria-label='Page navigation example')
+        ul.pagination
+            li.page-item
+                a.page-link(href='?page=1')=page-1
+            li.page-item.active
+                a.page-link(href='?page=2')=page
+            li.page-item
+                a.page-link(href='?page=3')=page+1
+    script     
+        include ../public/handleCRUD.js

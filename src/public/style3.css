@@ -1,0 +1,44 @@
+.info {
+    width: 700px;
+}
+
+.lato {
+    display: flex;
+}
+
+.lato img{
+    width: 100px;
+    margin-right: 15px;
+}
+
+.lato div div {
+    color: brown;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+td a {
+    margin-right: 5px !important;
+    border: 1px solid gray !important;
+}
+
+.status {
+    text-align: center;
+}
+
+.status div:first-child {
+    font-weight: bold;
+}
+
+nav {
+    float: right;
+    margin-right: 20%;
+}
+
+.alert1 {
+    display: none;
+}
+
+.success {
+    display: none;
+}

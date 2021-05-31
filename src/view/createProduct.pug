@@ -1,0 +1,30 @@
+extend layout.pug 
+block body 
+    style 
+        include ../public/createProductStyle.css
+    h2 Thêm Sản phẩm 
+    h5 Product
+    form.container.form-control(name="createform", id="createform",action="/product/create",method="post", enctype="multipart/form-data")
+        if fail
+            .alert.alert-danger(role="alert") Lỗi khi tạo
+        if success
+            .alert.alert-success(role="alert") Thành công
+        .field 
+            label(for="id") Id 
+            input(type="text", id="id", name="id")
+        .field
+            label(for="title") Title 
+            input(type="text", id="title", name="title")
+        .field
+            label(for="Summary") Summary 
+            input(type="text", id="Summary", name="summary")
+        .field
+            label(for="imageUrl") ImageUrl 
+            input(type="file", id="imageUrl", accept="image/*", name="imageUrl")
+        .field
+            label(for="Price") Price 
+            input(type="text", id="Price", name="price")
+        .field
+            label(for="Number") Number 
+            input(type="text", id="Number", name="number")
+        button.btn.btn-light Create

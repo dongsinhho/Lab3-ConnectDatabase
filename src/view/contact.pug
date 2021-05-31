@@ -1,0 +1,37 @@
+extend layout.pug 
+block body 
+    style
+        include ../public/contactStyle.css
+    .container
+        .info
+            h2 Thông tin Liên hệ
+            .address 
+                p Trường Đại học Công nghệ Thông tin ĐHQG TP.HCM
+                p KP 6, Thủ Đức, Hồ Chí Minh, Việt Nam
+                p P: (028) 372 52002
+            .web 
+                strong Email:
+                a(href="info@uit.edu.vn") info@uit.edu.vn
+                br
+                strong Website:
+                a(href="uit.edu.vn") uit.edu.vn
+            iframe(src='https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3918.2324288146738!2d106.801\
+61941411598!3d10.86991839225808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s\
+!4v1588878290282!5m2!1svi!2s', frameborder='0', style='border:0;', allowfullscreen='', aria-hidden='false', tabindex='0')
+
+        .contact
+            h2 Liên hệ với chúng tôi
+            .alert.alert-danger(role='alert') Vui lòng nhập lại!
+            .alert.alert-success(role='alert') Chúng tôi đã tiếp nhận yêu cầu!
+            form(method="POST",action="/contact", name="forminfo", id="forminfo") 
+                label(for="fullname") Họ và tên:
+                input(type="text", id="fullname", name="name")
+                label(for="mail") Địa chỉ Email:
+                input(type="email", id="mail", name="mail")
+                label(for="dt") Số điện thoại:
+                input(type="text", id="dt",name="phone", minlength="10", maxlength="11")
+                label(for="mess") Thông điệp:
+                textarea(id="mess",form="forminfo",name="message", rows="5") 
+                button.btn.btn-primary#handle Submit
+    script     
+        include ../public/handleContact.js

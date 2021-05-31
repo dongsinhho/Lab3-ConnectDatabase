@@ -1,0 +1,35 @@
+extend layout.pug 
+block body 
+    style 
+        include ../public/style.css
+    h1 PRODUCT 
+    table.table.table-bordered
+        thead
+            tr
+                th(scope='col') Stt
+                th(scope='col') Tên sản phẩm
+                th(scope='col') Giá
+                th(scope='col') Tình trạng
+                th(scope='col') Thương hiệu
+                th(scope='col') Thanh toán
+        tbody
+            each laptop in laptopProducts
+                tr
+                    td= laptop[0]
+                    td.latocontainer  
+                        - var imgs = laptop[6];       //"\"" + laptop[6] + "\""
+                        div.lato
+                            img(src=imgs)
+                            div
+                                div= laptop[1]
+                                p= laptop[5]
+                    td
+                        div.gia= laptop[2]
+                    td.status
+                        div.tinhtrang Còn hàng
+                        div.soluong= "(" + laptop[4] + ")"
+                    td.thuonghieu= laptop[3]
+                    td.thanhtoan 
+                        a(href="#") Thêm vào giỏ hàng
+    script     
+        include ../public/handleProduct.js

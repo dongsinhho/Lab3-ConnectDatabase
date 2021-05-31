@@ -1,0 +1,16 @@
+.field {
+    margin: 2rem 10%;
+    justify-items: center;
+}
+
+.field input {
+    float: right;
+    width: 80%;
+    height: 2.5rem;
+}
+
+
+button {
+    margin-left: 20%;
+    border: 1px solid gray !important;
+}

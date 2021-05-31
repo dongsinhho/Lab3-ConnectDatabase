@@ -1,0 +1,53 @@
+.latocontainer
+{
+    width: 700px;
+}
+.lato {
+    display: flex;
+}
+
+.lato img{
+    width: 100px;
+    margin-right: 15px;
+}
+
+.lato div div {
+    color: brown;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.gia {
+    font-weight: bold;
+}
+
+.status {
+    text-align: center;
+}
+
+.tinhtrang {
+    font-weight: bold;
+}
+
+.thuonghieu {
+    text-align: center;
+}
+
+.thanhtoan a {
+    text-decoration: none;
+}
+
+/* thead tr{
+    text-align: center;
+} */
+
+@media only screen and (max-width: 768px) {
+    .lato{
+        display: block;
+    }
+
+    .lato img{
+        width: 100%;
+        margin-right: unset;
+    }
+}

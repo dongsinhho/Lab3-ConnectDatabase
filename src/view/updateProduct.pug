@@ -1,0 +1,30 @@
+extend layout.pug 
+block body 
+    style 
+        include ../public/updateProductStyle.css
+    h2 Cập nhật Sản phẩm 
+    h5 Product
+
+    form(name="updateform", id="updateform", action="/product/update", method="post").container.form-control
+        if fail
+            .alert.alert-danger(role="alert") Cập nhật lỗi
+        if success
+            .alert.alert-success(role="alert") Thành công
+        input.idd(type="text",  name="idd", value=laptop._id)
+        .field
+            label(for="title") Title 
+            input(type="text", id="title", name="title", value=laptop.title)
+        .field
+            label(for="Summary") Summary 
+            input(type="text", id="Summary", name="Summary", value=laptop.summary)
+        .field
+            label(for="ImageUrl") ImageUrl 
+            input(type="text", id="ImageUrl", name="ImageUrl", value=laptop.imageurl)
+        .field
+            label(for="Price") Price 
+            input(type="text", id="Price", name="Price", value=laptop.price)
+        .field
+            label(for="number") Number 
+            input(type="text", id="number", name="number", value=laptop.number)
+        button.btn.btn-light(type="submit") Save
+        a.back(href="/product/getIndex") Back to List
